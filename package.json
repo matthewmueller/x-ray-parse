@@ -1,0 +1,18 @@
+{
+  "name": "x-ray-parse",
+  "version": "0.0.1",
+  "description": "Selector parser",
+  "keywords": [],
+  "author": "Matthew Mueller <matt@lapwinglabs.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lapwinglabs/x-ray-parse.git"
+  },
+  "dependencies": {
+    "format-parser": "0.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "main": "index"
+}
