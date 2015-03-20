@@ -1,9 +1,33 @@
 
 # x-ray-parse
 
-  Selector parser
+  x-ray's selector parser.
 
-## License 
+## Usage
+
+```js
+parse('a[class][target="_blank"] @ href | trim left')
+{
+  selector: 'a[class][target="_blank"]',
+  attribute: 'href',
+  filters: [{ name: trim, args: ['left'] }]
+}
+```
+
+## Installation
+
+```
+npm install x-ray-parse
+```
+
+## Test
+
+```
+npm install
+make test
+```
+
+## License
 
 (The MIT License)
 

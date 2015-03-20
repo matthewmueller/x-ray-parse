@@ -50,5 +50,19 @@ describe('parse', function() {
     assert.equal('href', parse('@ href').attribute);
     assert.equal('href', parse('@href').attribute);
   });
-  
+
+  it('should support filters', function() {
+    var selector = 'a[href][class] @ html | filter1 | filter2';
+    assert.equal('a[href][class]', parse(selector).selector);
+    assert.equal('html', parse(selector).attribute);
+    assert.deepEqual([{ name: 'filter1', args: [] }, { name: 'filter2', args: [] }], parse(selector).filters);
+  })
+
+  it('should support filters with arguments', function() {
+    var selector = 'a[href][class] @ html | filter1: "%Y %M %d" | filter2: matt 25';
+    assert.equal('a[href][class]', parse(selector).selector);
+    assert.equal('html', parse(selector).attribute);
+    assert.deepEqual([{ name: 'filter1', args: [ '%Y %M %d' ] }, { name: 'filter2', args: ['matt', 25] }], parse(selector).filters);
+  })
+
 })
