@@ -1,6 +1,6 @@
 {
   "name": "x-ray-parse",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Selector parser",
   "keywords": [],
   "author": "Matthew Mueller <matt@lapwinglabs.com>",
