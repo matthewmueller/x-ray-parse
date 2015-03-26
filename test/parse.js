@@ -65,4 +65,10 @@ describe('parse', function() {
     assert.deepEqual([{ name: 'filter1', args: [ '%Y %M %d' ] }, { name: 'filter2', args: ['matt', 25] }], parse(selector).filters);
   })
 
+  it('should support everything with no spaces', function() {
+    var selector = 'a@href|href|uppercase';
+    assert.equal('a', parse(selector).selector);
+    assert.equal('href', parse(selector).attribute);
+    assert.deepEqual([{ name: 'href', args: [] }, { name: 'uppercase', args: [] }], parse(selector).filters);
+  })
 })

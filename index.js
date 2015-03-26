@@ -15,7 +15,7 @@ var filter_parser = require('format-parser');
  */
 
 var rselector = /^([^@]*)(?:@\s*([\w-_]+))?$/;
-var rfilters = /\s*\|[^\=]\s*/;
+var rfilters = /\s*\|(?!\=)\s*/;
 
 /**
  * Initialize `parse`
